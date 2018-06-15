@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/API.iml" filepath="$PROJECT_DIR$/API.iml" />
-      <module fileurl="file://$PROJECT_DIR$/api/aws.iml" filepath="$PROJECT_DIR$/api/aws.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/api.iml" filepath="$PROJECT_DIR$/api/api.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Android\API\api\aws.iml" filepath="D:\Android\API\api\aws.iml" />
     </modules>
   </component>
 </project>

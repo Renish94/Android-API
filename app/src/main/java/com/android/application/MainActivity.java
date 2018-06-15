@@ -10,7 +10,11 @@ import com.android.api.API;
 import com.android.api.common.Priority;
 import com.android.api.error.APIError;
 import com.android.api.interfaces.AnalyticsListener;
+import com.android.api.interfaces.ParsedRequestListener;
 import com.android.api.interfaces.StringRequestListener;
+import com.android.application.model.Post;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,21 +54,21 @@ public class MainActivity extends AppCompatActivity {
                             }
 
                             @Override
-                            public void onError(APIError error) {
-                                if (error.getErrorCode() != 0) {
+                            public void onError(APIError apiError) {
+                                if (apiError.getErrorCode() != 0) {
                                     // received APIError from server
 
-                                    // error.getErrorCode() - the APIError code from server
-                                    Log.d(TAG, "onError errorCode : " + error.getErrorCode());
+                                    // apiError.getErrorCode() - the APIError code from server
+                                    Log.d(TAG, "onError errorCode : " + apiError.getErrorCode());
 
-                                    // error.getErrorBody() - the APIError body from server
-                                    Log.d(TAG, "onError errorBody : " + error.getErrorBody());
+                                    // apiError.getErrorBody() - the APIError body from server
+                                    Log.d(TAG, "onError errorBody : " + apiError.getErrorBody());
 
-                                    // error.getErrorDetail() - just a APIError detail
-                                    Log.d(TAG, "onError errorDetail : " + error.getErrorDetail());
+                                    // apiError.getErrorDetail() - just a APIError detail
+                                    Log.d(TAG, "onError errorDetail : " + apiError.getErrorDetail());
                                 } else {
-                                    // error.getErrorDetail() : connectionError, parseError, requestCancelledError
-                                    Log.d(TAG, "onError errorDetail : " + error.getErrorDetail());
+                                    // apiError.getErrorDetail() : connectionError, parseError, requestCancelledError
+                                    Log.d(TAG, "onError errorDetail : " + apiError.getErrorDetail());
                                 }
                             }
                         });
@@ -90,21 +94,21 @@ public class MainActivity extends AppCompatActivity {
                             }
 
                             @Override
-                            public void onError(APIError error) {
-                                if (error.getErrorCode() != 0) {
+                            public void onError(APIError apiError) {
+                                if (apiError.getErrorCode() != 0) {
                                     // received APIError from server
 
-                                    // error.getErrorCode() - the APIError code from server
-                                    Log.d(TAG, "onError errorCode : " + error.getErrorCode());
+                                    // apiError.getErrorCode() - the APIError code from server
+                                    Log.d(TAG, "onError errorCode : " + apiError.getErrorCode());
 
-                                    // error.getErrorBody() - the APIError body from server
-                                    Log.d(TAG, "onError errorBody : " + error.getErrorBody());
+                                    // apiError.getErrorBody() - the APIError body from server
+                                    Log.d(TAG, "onError errorBody : " + apiError.getErrorBody());
 
-                                    // error.getErrorDetail() - just a APIError detail
-                                    Log.d(TAG, "onError errorDetail : " + error.getErrorDetail());
+                                    // apiError.getErrorDetail() - just a APIError detail
+                                    Log.d(TAG, "onError errorDetail : " + apiError.getErrorDetail());
                                 } else {
-                                    // error.getErrorDetail() : connectionError, parseError, requestCancelledError
-                                    Log.d(TAG, "onError errorDetail : " + error.getErrorDetail());
+                                    // apiError.getErrorDetail() : connectionError, parseError, requestCancelledError
+                                    Log.d(TAG, "onError errorDetail : " + apiError.getErrorDetail());
                                 }
                             }
                         });
@@ -130,21 +134,21 @@ public class MainActivity extends AppCompatActivity {
                             }
 
                             @Override
-                            public void onError(APIError error) {
-                                if (error.getErrorCode() != 0) {
+                            public void onError(APIError apiError) {
+                                if (apiError.getErrorCode() != 0) {
                                     // received APIError from server
 
-                                    // error.getErrorCode() - the APIError code from server
-                                    Log.d(TAG, "onError errorCode : " + error.getErrorCode());
+                                    // apiError.getErrorCode() - the APIError code from server
+                                    Log.d(TAG, "onError errorCode : " + apiError.getErrorCode());
 
-                                    // error.getErrorBody() - the APIError body from server
-                                    Log.d(TAG, "onError errorBody : " + error.getErrorBody());
+                                    // apiError.getErrorBody() - the APIError body from server
+                                    Log.d(TAG, "onError errorBody : " + apiError.getErrorBody());
 
-                                    // error.getErrorDetail() - just a APIError detail
-                                    Log.d(TAG, "onError errorDetail : " + error.getErrorDetail());
+                                    // apiError.getErrorDetail() - just a APIError detail
+                                    Log.d(TAG, "onError errorDetail : " + apiError.getErrorDetail());
                                 } else {
-                                    // error.getErrorDetail() : connectionError, parseError, requestCancelledError
-                                    Log.d(TAG, "onError errorDetail : " + error.getErrorDetail());
+                                    // apiError.getErrorDetail() : connectionError, parseError, requestCancelledError
+                                    Log.d(TAG, "onError errorDetail : " + apiError.getErrorDetail());
                                 }
                             }
                         });
@@ -167,21 +171,21 @@ public class MainActivity extends AppCompatActivity {
                             }
 
                             @Override
-                            public void onError(APIError error) {
-                                if (error.getErrorCode() != 0) {
+                            public void onError(APIError apiError) {
+                                if (apiError.getErrorCode() != 0) {
                                     // received APIError from server
 
-                                    // error.getErrorCode() - the APIError code from server
-                                    Log.d(TAG, "onError errorCode : " + error.getErrorCode());
+                                    // apiError.getErrorCode() - the APIError code from server
+                                    Log.d(TAG, "onError errorCode : " + apiError.getErrorCode());
 
-                                    // error.getErrorBody() - the APIError body from server
-                                    Log.d(TAG, "onError errorBody : " + error.getErrorBody());
+                                    // apiError.getErrorBody() - the APIError body from server
+                                    Log.d(TAG, "onError errorBody : " + apiError.getErrorBody());
 
-                                    // error.getErrorDetail() - just a APIError detail
-                                    Log.d(TAG, "onError errorDetail : " + error.getErrorDetail());
+                                    // apiError.getErrorDetail() - just a APIError detail
+                                    Log.d(TAG, "onError errorDetail : " + apiError.getErrorDetail());
                                 } else {
-                                    // error.getErrorDetail() : connectionError, parseError, requestCancelledError
-                                    Log.d(TAG, "onError errorDetail : " + error.getErrorDetail());
+                                    // apiError.getErrorDetail() : connectionError, parseError, requestCancelledError
+                                    Log.d(TAG, "onError errorDetail : " + apiError.getErrorDetail());
                                 }
                             }
                         });
@@ -194,5 +198,36 @@ public class MainActivity extends AppCompatActivity {
                 txt_output.setText("");
             }
         });
+
+        API.get("https://jsonplaceholder.typicode.com/posts")
+                .setTag(this)
+                .setPriority(Priority.LOW)
+                .doNotCacheResponse()
+                .build()
+                .getAsObjectList(Post.class, new ParsedRequestListener<List<Post>>() {
+                    @Override
+                    public void onResponse(List<Post> response) {
+                        Log.d(TAG, "onResponse: " + response.size());
+                    }
+
+                    @Override
+                    public void onError(APIError apiError) {
+                        if (apiError.getErrorCode() != 0) {
+                            // received APIError from server
+
+                            // apiError.getErrorCode() - the APIError code from server
+                            Log.d(TAG, "onError errorCode : " + apiError.getErrorCode());
+
+                            // apiError.getErrorBody() - the APIError body from server
+                            Log.d(TAG, "onError errorBody : " + apiError.getErrorBody());
+
+                            // apiError.getErrorDetail() - just a APIError detail
+                            Log.d(TAG, "onError errorDetail : " + apiError.getErrorDetail());
+                        } else {
+                            // apiError.getErrorDetail() : connectionError, parseError, requestCancelledError
+                            Log.d(TAG, "onError errorDetail : " + apiError.getErrorDetail());
+                        }
+                    }
+                });
     }
 }
